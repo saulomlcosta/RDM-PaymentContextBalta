@@ -7,6 +7,9 @@ namespace PaymentContext.Domain.ValueObjects
         public Email(string address)
         {
             Address = address;
+
+             if (string.IsNullOrEmpty(Address))
+                AddNotification("Adress", "Invalid address");
         }
 
         public string Address { get; private set; }

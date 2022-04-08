@@ -9,6 +9,9 @@ namespace PaymentContext.Domain.ValueObjects
         {
             Number = number;
             Type = type;
+
+            if (string.IsNullOrEmpty(Number))
+                AddNotification("Number", "Invalid number");
         }
 
         public string Number { get; private set; }
